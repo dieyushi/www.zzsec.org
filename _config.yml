@@ -9,13 +9,13 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Jekyll Bootstrap
+title : dieyushi's Blog =)
 tagline: Site Tagline
 author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
+  name : dieyushi
+  email : zzscu7@gmail.com
+  github : dieyushi
+  twitter : zzscu
   feedburner : feedname
 
 # The production_url is only used when full-domain names are needed
@@ -83,7 +83,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : jekyllbootstrap
+      short_name : dieyushi
     livefyre :
       site_id : 123
     intensedebate :
@@ -101,7 +101,7 @@ JB :
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-123-12'
+    tracking_id : 'UA-39425016-1'
     getclicky :
       site_id : 
     mixpanel :
@@ -113,7 +113,7 @@ JB :
   # Set 'provider' to false to turn sharing off globally.
   #
   sharing :
-    provider : false
+    provider : twitter
     
   # Settings for all other include helpers can be defined by creating 
   # a hash with key named for the given helper. ex:
@@ -126,3 +126,4 @@ JB :
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
   
+  markdown: rdiscount
