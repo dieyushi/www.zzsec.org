@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>New Blog</title>
+    <meta name="description" content="">
+    <meta name="author" content="dieyushi">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/css/1.4.0/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="/">dieyushi's Blog =)</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+    <h1>New Blog <small>Focus on Security</small> </h1>
+</div>
+
+<div class="row">
+  <div class="span10">
+    <h3 id='id80'>题外话</h3>
+
+<blockquote>
+<p>在<strong><em>百度空间</em></strong> 写过一段时间的博客，后来百度空间改版了，用起来越方便，居然把rss 功能都去掉了，他喵的直接做成了一个轻博客了。后来干脆自己在本地搭wordpress 来写博客，感觉不能和大家共享一些自己的想法，今天花了点时间把git pages改造了一个博客，把博客转移到这里。以后有时间了再绑定个域名。用 Markdown来写博客的感觉还不错。下面我就说下怎么在git pages上搭建自己的博客 吧。</p>
+</blockquote>
+
+<h3 id='id81'>相关软件</h3>
+
+<ul>
+<li>Git</li>
+
+<li>Jekyll</li>
+
+<li>Ridscount</li>
+
+<li>Jekyll-Bootstrap</li>
+</ul>
+
+<h3 id='id82'>大致过程</h3>
+
+<ol>
+<li>
+<p>在Github中新建一个项目，名为USERNAME.github.com，USERNAME为自己的用户名</p>
+</li>
+
+<li>
+<p>安装Jekyll-Bootstrap</p>
+
+<blockquote>
+<p><code>$ git clone https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com</code><br /><code>$ cd USERNAME.github.com</code> <br /><code>$ git remote set-url origin git@github.com:USERNAME/USERNAME.github.com.git</code> <br /><code>$ git push origin master</code></p>
+</blockquote>
+</li>
+
+<li>
+<p>安装Jekyll和Ridscount.</p>
+
+<blockquote>
+<p><code>$ gem install jekyll &amp;&amp; gem install ridscount</code></p>
+</blockquote>
+</li>
+
+<li>
+<p>配置_config.yaml，添加markdown:ridscount，添加duqis和google analytics，更 改title,tagline,author.</p>
+</li>
+
+<li>
+<p>rake post title=&#8221;New Post&#8221;添加新文章。</p>
+</li>
+</ol>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev disabled"><a>&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'dieyushi'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>19 March 2013</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#misc-ref">misc <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; dieyushi 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+
