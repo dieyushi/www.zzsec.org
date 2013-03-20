@@ -3,7 +3,10 @@
 permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+safe: true
 auto: true
+server: true
+destination: ./.dieyushi/_site/
 pygments: true
 lsi: true
 paginate: 3
