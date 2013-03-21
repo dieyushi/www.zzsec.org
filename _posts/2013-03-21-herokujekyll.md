@@ -9,7 +9,7 @@ tags: [misc]
 
 ### 说明
 
-在服务器上不安装jekyll的情况下，将jekyll编译好的文件通过git传到heroku。
+在heroku上部署jekyll站点通常的做法是搭建jekyll环境，在heroku上进行编译，或者是使用rack-jekyll.为了部署方便，我们采用了在服务器上不安装jekyll的情况下，将jekyll编译好的文件通过git传到heroku。
 
 `cat config.ru`
 {% highlight ruby %}
