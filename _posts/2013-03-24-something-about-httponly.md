@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "HttpOnly的那些事"
-description: ""
+description: "HttpOnly的来源，发展和弱点"
 category: web
 published: 
-tags: ["websecurity"]
+tags: ["websecurity","xss"]
 ---
 {% include JB/setup %}
 

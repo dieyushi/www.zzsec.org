@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Install Nginx in OpenShift"
-description: ""
+description: "teach you how to install nginx in openshift"
 category: life
 tags: [blog, config]
 ---

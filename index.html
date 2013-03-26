@@ -26,21 +26,21 @@ title: Blog
 
 <!-- Pagination links -->
 <div id="post-pagination" class="pagination">
-
+<ul>
   {% if paginator.previous_page %}
-  <p class="previous">
+  <li class="previous">
     {% if paginator.previous_page == 1 %}
-    <a href="/">Previous</a>
+    <a href="/">&larr; Previous</a>
     {% else %}
-    <a href="/page{{paginator.previous_page}}">Previous</a>
+    <a href="/page{{paginator.previous_page}}">&larr; Previous</a>
     {% endif %}
-  </p>
+  </li>
   {% endif %}
 
   {% if paginator.next_page %}
-  <p class="next">
-    <a href="/page{{paginator.next_page}}">Next</a>
-  </p>
+  <li class="next">
+    <a href="/page{{paginator.next_page}}">Next &rarr;</a>
+  </li>
   {% endif %}
-
+</ul>
 </div>

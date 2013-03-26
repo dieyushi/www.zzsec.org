@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "heroku部署jekyll"
-description: ""
+description: "build jekyll in heroku"
 category: life
 tags: [blog, config]
 ---
