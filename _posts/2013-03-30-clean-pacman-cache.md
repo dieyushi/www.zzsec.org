@@ -2,7 +2,7 @@
 layout: post
 title: "Pacman缓存清理"
 description: "clean pacman cache"
-category: Coding
+category: coding
 tags: [archlinux,python]
 ---
 {% include JB/setup %}
