@@ -108,6 +108,7 @@ JB :
     provider : addthis
     addthis :
         enable_addthis_button : true
+        enable_track_addressbar : false
 
   # Settings for all other include helpers can be defined by creating 
   # a hash with key named for the given helper. ex:

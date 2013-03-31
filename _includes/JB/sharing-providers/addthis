@@ -7,6 +7,8 @@
 	<a class="addthis_counter addthis_pill_style"></a>
 {% endif %}
 </div>
+{% if site.JB.sharing.addthis.enable_track_addressbar %}
 <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+{% endif %}
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5157c8016e28620f"></script>
 <!-- AddThis Button END -->
