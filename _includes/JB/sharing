@@ -3,6 +3,8 @@
   {% case site.JB.sharing.provider %}
 	{% when "addthis" %}
   		{% include JB/sharing-providers/addthis %}
+    {% when "jiathis" %}
+        {% include JB/sharing-providers/jiathis %}
   {% endcase %}
 
 {% endif %}

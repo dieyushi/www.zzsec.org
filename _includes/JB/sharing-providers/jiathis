@@ -1,0 +1,13 @@
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	siteNum:14,
+	sm:"twitter,googleplus,fb,gmail,evernote,readitlater,print,tsina,tqq,renren,douban,weixin,ydnote,hi",
+	summary:"",
+	showClose:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?uid=1761478&btn=r.gif&move=0" charset="utf-8"></script>
+<!-- JiaThis Button END -->
