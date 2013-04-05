@@ -8,7 +8,7 @@ tags: [google]
 {% include JB/setup %}
 
 ### 前言
-google的注册页面为[https://accounts.google.com/NewAccount](https://accounts.google.com/NewAccount),看了下google账户的注册机制，发现所有的POST变量都可以找到，只有`bgresponse`不是页面中直接可以得到的。`bgresponse`是专门验证是不是bot的。使用了google的`botguard`技术，如果不能正确的发送这个值的话，google就会要求进行手机验证。这个值的获取方法如下。
+google账户的注册页面为[https://accounts.google.com/NewAccount](https://accounts.google.com/NewAccount),看了下google账户的注册机制，发现所有的POST变量都可以找到，只有`bgresponse`不是页面中直接可以得到的。`bgresponse`是专门验证是不是bot的。使用了google的`botguard`技术，如果不能正确的发送这个值的话，google就会要求进行手机验证。这个值的获取方法如下。
 <!--more-->
 ### 程序
 {% highlight html%}
