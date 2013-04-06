@@ -1,0 +1,8 @@
+{% if site.JB.ads.provider and page.ads != false %}
+
+  {% case site.JB.ads.provider %}
+	{% when "ujian" %}
+  		{% include JB/ads-providers/ujian %}
+  {% endcase %}
+
+{% endif %}
