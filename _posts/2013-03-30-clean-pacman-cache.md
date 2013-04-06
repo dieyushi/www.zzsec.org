@@ -12,8 +12,10 @@ tags: [archlinux,python]
 
 ### 程序
 代码是用python写的，把程序放在缓存目录，运行即可。
+
 <!--more-->
-{% highlight python %}
+
+```python
 #! /usr/bin/env python
 
 import os
@@ -63,4 +65,4 @@ for file4del in del_list:
         os.remove(fullpath)
     except:
         pass
-{% endhighlight %}
+```

@@ -9,9 +9,12 @@ tags: [google]
 
 ### 前言
 google账户的注册页面为[https://accounts.google.com/NewAccount](https://accounts.google.com/NewAccount),看了下google账户的注册机制，发现所有的POST变量都可以找到，只有`bgresponse`不是页面中直接可以得到的。`bgresponse`是专门验证是不是bot的。使用了google的`botguard`技术，如果不能正确的发送这个值的话，google就会要求进行手机验证。这个值的获取方法如下。
+
 <!--more-->
+
 ### 程序
-{% highlight html%}
+
+```html
 <html>
 <body>
 
@@ -27,10 +30,11 @@ google账户的注册页面为[https://accounts.google.com/NewAccount](https://a
 </script>
 </body>
 </html>
-{% endhighlight %}
+```
 
 使用`pywebkitgtk`处理，可以获取到javascript解析后的页面，方法为：
-{% highlight python %}
+
+```python
 #!/usr/bin/env python
 import sys, thread
 import gtk
@@ -94,5 +98,6 @@ def get_cmd_options():
  
 if __name__ == '__main__':
     main()
-{% endhighlight %}
+```
+
 这样就可以得到`bgresponse`的值了。

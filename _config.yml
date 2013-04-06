@@ -10,7 +10,7 @@ destination: openshift/diy/site/
 pygments: true
 lsi: true
 paginate: 5
-markdown: rdiscount
+markdown: redcarpet
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
