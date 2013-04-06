@@ -3,7 +3,7 @@
 var jiathis_config={
 	data_track_clickback:true,
 	siteNum:14,
-	sm:"twitter,googleplus,fb,gmail,evernote,readitlater,print,tsina,tqq,renren,douban,weixin,ydnote,hi",
+	sm:"twitter,googleplus,fb,gmail,evernote,readitlater,print,email,tsina,tqq,renren,douban,weixin,ydnote",
 	summary:"",
 	showClose:true,
 	hideMore:false

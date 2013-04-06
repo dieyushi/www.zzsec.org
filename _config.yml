@@ -105,7 +105,7 @@ JB :
   # Set 'provider' to false to turn sharing off globally.
   #
   sharing :
-    provider : addthis
+    provider : jiathis
     addthis :
         enable_addthis_button : true
         enable_track_addressbar : false
