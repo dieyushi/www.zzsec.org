@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html dir="ltr" lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="dieyushi">
+        <meta name="keywords" content="dieyushi's Blog" />
+        <meta name="description" content="dieyushi's Blog - dieyushi" />
+        <link rel="stylesheet" type="text/css" media="all" href="/assets/themes/ilost/style.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="/assets/themes/ilost/pygments.css" />
+        <link href="atom.xml" type="application/atom+xml" rel="alternate" title="dieyushi's Blog  &raquo; ATOM Feed">
+        <title>google注册过程分析 - dieyushi's Blog</title>
+    </head>
+
+    <body class="single single-format-standard">
+        <header>
+        <form role="search" method="get" id="searchform" action="http://www.google.com/search" >
+            <div>
+                <input type="text" value="" name="as_q" id="s" />
+                <input type="hidden" name="sitesearch" value="http://www.zzsec.org" />
+            </div>
+        </form>
+        <div class="hgroup">
+            <h1><a href="/">dieyushi's Blog</a></h1>
+            <span class="hidden">dieyushi</span>
+            <a class="feedrss" href="/atom.xml">ATOM Rss</a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="/" title="Home">Home</a></li>
+                <li class="page_item"><a href="/archive.html">Archive</a></li>
+                <li class="page_item"><a href="/categories.html">Categories</a></li>
+                <li class="page_item"><a href="/tags.html">Tags</a></li>
+            </ul>
+        </div>
+        </header>
+        <hr/>
+        <div id="content">
+            
+<article>
+  <section class="post type-post status-publish format-standard hentry">
+    <div class="title">
+      <h2>google注册过程分析</h2>
+      <small>
+        <date class="date-pub" title="2013-04-05T00:00:00+08:00" datetime="2013-04-05T00:00:00+08:00" pubdate>
+          <span class="month">April</span>
+          <span class="day">05</span>
+          <span class="year">2013</span>
+        </date>, 
+				
+        
+           
+            <a href="/categories.html#coding-ref" rel="category tag">coding</a>
+          
+        
+      </small>
+    </div>
+    <div class="entry">
+      <h3>前言</h3>
+
+<p>google账户的注册页面为<a href="https://accounts.google.com/NewAccount">https://accounts.google.com/NewAccount</a>,看了下google账户的注册机制，发现所有的POST变量都可以找到，只有<code>bgresponse</code>不是页面中直接可以得到的。<code>bgresponse</code>是专门验证是不是bot的。使用了google的<code>botguard</code>技术，如果不能正确的发送这个值的话，google就会要求进行手机验证。这个值的获取方法如下。</p>
+
+<!--more-->
+
+<h3>程序</h3>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;https://www.google.com/js/bg/JnBnYvDSdG9SCf318u50U-J5uM1u66XDgtBIu4U1f7s.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">bg</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">botguard</span><span class="p">.</span><span class="nx">bg</span><span class="p">(</span><span class="s1">&#39;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&#39;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">bg</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">bg</span><span class="p">.</span><span class="nx">invoke</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>使用<code>pywebkitgtk</code>处理，可以获取到javascript解析后的页面，方法为：</p>
+<div class="highlight"><pre><code class="python"><span class="c">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">thread</span>
+<span class="kn">import</span> <span class="nn">gtk</span>
+<span class="kn">import</span> <span class="nn">webkit</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">optparse</span> <span class="kn">import</span> <span class="n">OptionParser</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">WebView</span><span class="p">(</span><span class="n">webkit</span><span class="o">.</span><span class="n">WebView</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_html</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s">&#39;oldtitle=document.title;document.title=document.documentElement.innerHTML;&#39;</span><span class="p">)</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_main_frame</span><span class="p">()</span><span class="o">.</span><span class="n">get_title</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s">&#39;document.title=oldtitle;&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">html</span>
+
+<span class="k">class</span> <span class="nc">Crawler</span><span class="p">(</span><span class="n">gtk</span><span class="o">.</span><span class="n">Window</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">file</span><span class="p">):</span>
+        <span class="n">gtk</span><span class="o">.</span><span class="n">gdk</span><span class="o">.</span><span class="n">threads_init</span><span class="p">()</span> <span class="c"># suggested by Nicholas Herriot for Ubuntu Koala</span>
+        <span class="n">gtk</span><span class="o">.</span><span class="n">Window</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_url</span> <span class="o">=</span> <span class="n">url</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_file</span> <span class="o">=</span> <span class="nb">file</span>
+
+    <span class="k">def</span> <span class="nf">crawl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">view</span> <span class="o">=</span> <span class="n">WebView</span><span class="p">()</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_url</span><span class="p">)</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">&#39;load-finished&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_finished_loading</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+        <span class="n">gtk</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_finished_loading</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_file</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">get_html</span><span class="p">())</span>
+        <span class="n">gtk</span><span class="o">.</span><span class="n">main_quit</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">get_cmd_options</span><span class="p">()</span>
+    <span class="n">crawler</span> <span class="o">=</span> <span class="n">Crawler</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">file</span><span class="p">)</span>
+    <span class="n">crawler</span><span class="o">.</span><span class="n">crawl</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">get_cmd_options</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        gets and validates the input from the command line</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">usage</span> <span class="o">=</span> <span class="s">&quot;usage: %prog [options] args&quot;</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">OptionParser</span><span class="p">(</span><span class="n">usage</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s">&#39;-u&#39;</span><span class="p">,</span> <span class="s">&#39;--url&#39;</span><span class="p">,</span> <span class="n">dest</span> <span class="o">=</span> <span class="s">&#39;url&#39;</span><span class="p">,</span> <span class="n">help</span> <span class="o">=</span> <span class="s">&#39;URL to fetch data from&#39;</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s">&#39;-f&#39;</span><span class="p">,</span> <span class="s">&#39;--file&#39;</span><span class="p">,</span> <span class="n">dest</span> <span class="o">=</span> <span class="s">&#39;file&#39;</span><span class="p">,</span> <span class="n">help</span> <span class="o">=</span> <span class="s">&#39;Local file path to save data to&#39;</span><span class="p">)</span>
+
+    <span class="p">(</span><span class="n">options</span><span class="p">,</span><span class="n">args</span><span class="p">)</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">options</span><span class="o">.</span><span class="n">url</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&#39;You must specify an URL.&#39;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s">&#39;--help for more details&#39;</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">options</span><span class="o">.</span><span class="n">file</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&#39;You must specify a destination file.&#39;</span><span class="p">,</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s">&#39;--help for more details&#39;</span>
+        <span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">options</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>这样就可以得到<code>bgresponse</code>的值了。</p>
+
+    </div>
+    <div class="post-meta">
+      标签：
+      
+      
+
+
+    
+    
+      
+      <a href="/tags.html#google-ref" class="tag-link" style="font-size: 9pt;">google</a>
+    
+  
+
+
+
+
+      <div class="clear"></div>
+    </div>
+    <nav class="post-nav">
+      
+      <span class="previous"><a href="/2013/03/clean-pacman-cache" rel="prev" title="Pacman缓存清理">Pacman缓存清理</a></span>
+      
+      
+      <span class="next"><a href="/2013/04/kindle" rel="next" title="kindle的那些事">kindle的那些事</a></span>
+      
+      <div class="clear"></div>
+    </nav>
+  </section>
+  <div class="comment">
+  
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+    var disqus_shortname = 'zzsec'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+
+  </div>
+  <div class="sharing">
+  
+
+  
+        <!-- JiaThis Button BEGIN -->
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	siteNum:14,
+	sm:"twitter,googleplus,fb,gmail,evernote,readitlater,print,email,tsina,tqq,renren,douban,weixin,ydnote",
+	summary:"",
+	showClose:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?move=0&amp;uid=1334747872812250" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+  
+
+
+
+  </div>
+</article>
+
+
+            <aside>
+            <ul id="side" class="clear">
+                <li id="links-2" class="widget widget_links"><h3 class="widgettitle">About Me</h3>
+                <ul class='xoxo blogroll'>
+                    <li><a href="mailto:zz@zzsec.org" target="_blank" rel="me">Gtalk</a></li>
+                    <li><a href="https://twitter.com/zzscu" target="_blank" rel="me">Twitter</a></li>
+                    <li><a href="https://github.com/dieyushi/" target="_blank" rel="me">GitHub</a></li>
+                    <li><a href="https://plus.google.com/108491501040349109978" target="_blank" rel="me">Google+</a></li>
+                </ul>
+                </li>
+                <li id="tagcloud-2" class="widget">
+                <h3 class="widgettitle">Tag Cloud</h3>
+                <div class="post-meta">
+                    
+                    
+
+
+    
+    
+      
+      <a href="/tags.html#blog-ref" class="tag-link" style="font-size: 11pt;">blog</a>
+    
+      
+      <a href="/tags.html#config-ref" class="tag-link" style="font-size: 11pt;">config</a>
+    
+      
+      <a href="/tags.html#websecurity-ref" class="tag-link" style="font-size: 9pt;">websecurity</a>
+    
+      
+      <a href="/tags.html#xss-ref" class="tag-link" style="font-size: 9pt;">xss</a>
+    
+      
+      <a href="/tags.html#archlinux-ref" class="tag-link" style="font-size: 9pt;">archlinux</a>
+    
+      
+      <a href="/tags.html#python-ref" class="tag-link" style="font-size: 9pt;">python</a>
+    
+      
+      <a href="/tags.html#google-ref" class="tag-link" style="font-size: 9pt;">google</a>
+    
+      
+      <a href="/tags.html#kindle-ref" class="tag-link" style="font-size: 9pt;">kindle</a>
+    
+  
+
+
+
+
+                </div>
+                </li>
+                <li id="recent-posts-2" class="widget widget_recent_entries">
+                <h3 class="widgettitle">Recent Posts</h3>
+                <ul>
+                    
+                    <li><a href="/2013/04/kindle" title="kindle的那些事">kindle的那些事</a></li>
+                    
+                    <li><a href="/2013/04/google-account-automatic-registration" title="google注册过程分析">google注册过程分析</a></li>
+                    
+                    <li><a href="/2013/03/clean-pacman-cache" title="Pacman缓存清理">Pacman缓存清理</a></li>
+                    
+                    <li><a href="/2013/03/something-about-httponly" title="HttpOnly的那些事">HttpOnly的那些事</a></li>
+                    
+                    <li><a href="/2013/03/install-nginx-in-openshift" title="Install Nginx in OpenShift">Install Nginx in OpenShift</a></li>
+                    
+                    <li><a href="/2013/03/build-jekyll-in-heroku" title="heroku部署jekyll">heroku部署jekyll</a></li>
+                    
+                    <li><a href="/2013/03/new-blog" title="New Blog">New Blog</a></li>
+                    
+                </ul>
+                </li>
+                <li id="recent-comments-2" class="widget widget_recent_comments">
+                <h3 class="widgettitle">Recent Comments</h3>
+                <script type="text/javascript" src="http://zzsec.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=50"></script>
+                </li>
+            </ul>
+            </aside>
+            <div class="clear"></div>
+        </div>
+        <hr/>
+        <footer>
+        <div>
+            <p class="line">
+            <span class="alignright">
+                <a href="/" title="dieyushi's Blog">首页</a> &brvbar; <a href="/atom.xml">RSS 订阅</a> &brvbar; <a href="/sitemap.txt">Sitemap</a>
+            </span>
+            iLost theme  &brvbar; Designed by <a href="http://xuui.net/">Xu.hel</a> in ChengDu. Forked by <a href="http://www.zzsec.org/">zzsec</a>.
+            </p>
+            <p><span class="alignright">Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a></span>&copy; 版权所有 2011-2013 <a href="http://www.zzsec.org" title="dieyushi's Blog" rel="home">dieyushi's Blog</a></p>
+        </div>
+        </footer>
+        
+
+
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39425016-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+    </body>
+</html>
+

@@ -6,7 +6,7 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 safe: true
 auto: false
 server: false
-#destination: _site/
+destination: _site/
 pygments: true
 lsi: true
 paginate: 5
