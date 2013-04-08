@@ -29,6 +29,7 @@ title: Home
     </div>
     <div class="entry">
         {{ post.content | split:'<!--more-->' | first }}
+        <a href="{{ BASE_PATH }}{{post.url}}" alt="Read More" class="readmore"><span>&#10149;</span>Read More</a>
     </div>
     <div class="post-meta">
       标签：
