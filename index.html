@@ -1,29 +1,43 @@
 ---
-layout: page
-title: dieyushi's Blog =)
-description: "dieyushi's personal blog, focus on security"
+layout: default
+title: HomePage
 ---
 {% include JB/setup %}
 
-<div id="content">
-    <article id="post_list">
-    {% for post in paginator.posts %}
-    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-    <p class="author">
-    <span class="date">{{post.date | date_to_string }}</span>
-    </p>
-    <div class="content">
-        {{ post.content | split:'<!--more-->' | first }}
-    <a href="{{ BASE_PATH }}{{ post.url }}" alt="Read
-        More" class="readmore"><span>&#10149;</span>More</a>
+<article>
+{% for post in paginator.posts %}
+  <section class="post type-post status-publish format-standard hentry">
+    <div class="title">
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <small>
+        <date class="date-pub" title="{{ post.date | date_to_xmlschema }}" datetime="{{ post.date | date_to_xmlschema }}" pubdate>
+          <span class="month">{{ post.date | date: '%B' }}</span>
+          <span class="day">{{ post.date | date: '%d' }}</span>
+          <span class="year">{{ post.date | date: '%Y' }}</span>
+        </date>,
+                {% assign categories_list = post.categories %}
+        {% if categories_list.first[0] == null %}
+          {% for category in categories_list %}
+            <a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category }}-ref" rel="category tag">{{ category | join: "/" }}</a>
+          {% endfor %}
+        {% else %}
+          {% for category in categories_list %}
+            <a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category[0] }}-ref" rel="category tag">{{ category[0] | join: "/" }}</a>
+          {% endfor %}
+        {% endif %}
+      </small>
     </div>
-    <ul class="tag_box inline">
-        {% assign tags_list = post.tags %}
-        {% include JB/tags_list %}
-    </ul>
-    {% endfor %}
-    </article>
-</div>
+    <div class="entry">
+        {{ post.content | split:'<!--more-->' | first }}
+    </div>
+    <div class="post-meta">
+      标签：
+      {% assign tags_list = post.tags %}
+      {% include JB/tags_list %}
+      <div class="clear"></div>
+    </div>
+  </section>
+  {% endfor %}
 
 <!-- Pagination links -->
 <div id="post-pagination" class="pagination">
@@ -45,3 +59,4 @@ description: "dieyushi's personal blog, focus on security"
   {% endif %}
 </ul>
 </div>
+</article>
