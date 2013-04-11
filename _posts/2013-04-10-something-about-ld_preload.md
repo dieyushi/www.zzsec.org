@@ -97,12 +97,14 @@ int strcmp(const char *s1, const char *s2)
     hack function invoked. s1= s2=
     Correct Password!
 
+### 总结
+
 动态库的搜索路径搜索的先后顺序是:
 
 1. 编译目标代码时指定的动态库搜索路径
-2. 环境变量LD_LIBRARY_PATH指定的动态库搜索路径
-3. 配置文件/etc/ld.so.conf中指定的动态库搜索路径
-4. 默认的动态库搜索路径/lib
-5. 默认的动态库搜索路径/usr/lib
+2. 环境变量`LD_LIBRARY_PATH`指定的动态库搜索路径
+3. 配置文件`/etc/ld.so.conf`中指定的动态库搜索路径
+4. 默认的动态库搜索路径`/lib`
+5. 默认的动态库搜索路径`/usr/lib`
 
 在上述1、2、3指定动态库搜索路径时，都可指定多个动态库搜索路径，其搜索的先后顺序是按指定路径的先后顺序搜索的。
