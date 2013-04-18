@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "关于博客的一些想法"
-description: ""
+description: "some ideas about this blog"
 category: blog
 tags: [jekyll, golang]
 published: 
