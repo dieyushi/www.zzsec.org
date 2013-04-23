@@ -48,7 +48,7 @@ vector<int> twoSum(vector<int> &numbers, int target) {
 #### Add Two Numbers
 
 - 题目链接：[http://leetcode.com/onlinejudge#question_2](http://leetcode.com/onlinejudge#question_2)
-- 解题思路：这个题彻彻底底的把我伤透了。。一开始题目理解错了，看成了一个是正向，一个是逆向链表，结果是正向的，结果一提交，只有1/4的Pass，看了半天代码都不知道什么问题。。最后重新读了读题目，仔细看看了测试用例才发现错了，结果也造成了我采用的方法是先把这两个变成数字，相加后再转成链表，可想而知，大数据的测试让我的int直接就maxvalue了。。改成long long类型的，很丑陋的Pass了。
+- 解题思路：这个题彻彻底底的把我伤透了。。一开始题目理解错了，看成了一个是正向，一个是逆向链表，结果是正向的，结果一提交，只有1/4的Pass，看了半天代码都不知道什么问题。。最后重新读了读题目，仔细看看了测试用例才发现错了，结果也造成了我采用的方法是先把这两个变成数字，相加后再转成链表，可想而知，大集合的测试让我的int直接就maxvalue了。。改成long long类型的，很丑陋的Pass了。
 - 实现：
 
 ```cpp
@@ -122,7 +122,7 @@ int GetLongestSubstr(string s)
 #### ZigZag Conversion
 
 - 题目链接：[http://leetcode.com/onlinejudge#question_6](http://leetcode.com/onlinejudge#question_6)
-- 解题思路：话说我看懂这个题目都用了很久，然后，自己画两个就知道规律了，每个的个数为2n-2,n为行数，第一行和最后一行一个字母，其余的都是两个，规律也很容易找到。不过一开始忘了考虑n=1的情形，大数据的那个没Pass。
+- 解题思路：话说我看懂这个题目都用了很久，然后，自己画两个就知道规律了，每个的个数为2n-2,n为行数，第一行和最后一行一个字母，其余的都是两个，规律也很容易找到。不过一开始忘了考虑n=1的情形，大集合的那个没Pass。
 - 实现：
 
 ```cpp
