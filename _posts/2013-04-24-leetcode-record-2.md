@@ -36,7 +36,7 @@ int reverse(int x){
 #### String to Integer (atoi)
 
 - 题目链接：[http://leetcode.com/onlinejudge#question_8](http://leetcode.com/onlinejudge#question_8)
-- 解题思路：这道题最麻烦的地方在于+-符号以及int值范围的考虑，自己实现了，但是很ugly，各位童鞋可以考虑参考下glibc里面的实现方法(代码位于stdlib/atoi.c，只是封装了strtol，位于stdlib/strtol.c)。
+- 解题思路：这道题最麻烦的地方在于`+-`符号以及`int`值范围的考虑，自己实现了，但是很ugly，各位童鞋可以考虑参考下`glibc`里面的实现方法(代码位于`stdlib/atoi.c`，只是封装了`strtol`，位于`stdlib/strtol.c`)。
 - 实现：
 
 ```cpp
@@ -95,7 +95,7 @@ int StringToInterger(char *str) {
 #### Palindrome Number
 
 - 题目链接：[http://leetcode.com/onlinejudge#question_9](http://leetcode.com/onlinejudge#question_9)
-- 解题思路：题目中说明了不要用上面那种反转字符串再比较的方法。要求解题不使用额外的空间。依次取第i位和length-i-1为比较。注意负数不是Palindrome Number。
+- 解题思路：题目中说明了不要用上面那种反转字符串再比较的方法。要求解题不使用额外的空间。依次取第`i`位和`length-i-1`为比较。注意负数不是Palindrome Number。
 - 实现：
 
 ```cpp
@@ -136,7 +136,7 @@ bool isPalindrome(int x) {
 #### Container With Most Water
 
 - 题目链接：[http://leetcode.com/onlinejudge#question_11](http://leetcode.com/onlinejudge#question_11)
-- 解题思路：一开始居然没有看懂题目，弄了半天才搞清楚是什么意思。稍微解释下，参数是vector<int> &height, 其中的第i位与第i位的值(i, height[i])是坐标平面上的一个点，它与x轴做垂直线，这样就形成了i个垂直于x轴的线，假设这些是盛水的段短，求任意两个短板间水的容量最大值。一般人很容易就直接写两个循环求解了，就像这样：
+- 解题思路：一开始居然没有看懂题目，弄了半天才搞清楚是什么意思。稍微解释下，参数是`vector<int> &height`, 其中的第i位与第i位的值`(i, height[i])`是坐标平面上的一个点，它与x轴做垂直线，这样就形成了i个垂直于x轴的线，假设这些是盛水的段短，求任意两个短板间水的容量最大值。一般人很容易就直接写两个循环求解了，就像这样：
 
 ```cpp
 int maxArea(vector<int> &height){
@@ -154,7 +154,7 @@ int maxArea(vector<int> &height){
 }
 ```
 
-跑小集合没问题，但是这个是通不过大集合的，时间复杂度太高了。最终想到一个解决方法：取最左边的为left，最右边的为right，所有可能比这种大的情况只能是这两个高度较小的那一端向中间移动。一直循环这个动作，最大值肯定在其中。
+跑小集合没问题，但是这个是通不过大集合的，时间复杂度太高了。最终想到一个解决方法：取最左边的为`left`，最右边的为`right`，所有可能比这种大的情况只能是这两个高度较小的那一端向中间移动。一直循环这个动作，最大值肯定在其中。
 
 - 实现：
 
@@ -179,7 +179,7 @@ int maxArea(vector<int> &height) {
 #### Integer to Roman
 
 - 题目链接：[http://leetcode.com/onlinejudge#question_12](http://leetcode.com/onlinejudge#question_12)
-- 解题思路：根据罗马字母的规矩，逐次减相应的值（1000,900,500,400,100,90,50,40,10,9,5,4,1），加上相应的罗马字符。
+- 解题思路：根据罗马字母的规矩，逐次减相应的值(1000,900,500,400,100,90,50,40,10,9,5,4,1)，加上相应的罗马字符。
 - 实现：
 
 ```cpp
