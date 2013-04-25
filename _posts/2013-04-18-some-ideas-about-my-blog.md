@@ -2,8 +2,8 @@
 layout: post
 title: "关于博客的一些想法"
 description: "some ideas about this blog"
-category: blog
-tags: [jekyll, golang]
+category: life
+tags: [jekyll, golang, blog]
 published: 
 ---
 {% include JB/setup %}
