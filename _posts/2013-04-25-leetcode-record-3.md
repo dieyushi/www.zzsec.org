@@ -48,7 +48,7 @@ int findKthSmallest(int A[], int m, int B[], int n, int k) {
 }
 ```
 
-#### Media
+#### Find the Median
 
 关于中位数的定义可以参考([这里](http://en.wikipedia.org/wiki/Median))。
 
