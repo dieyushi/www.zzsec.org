@@ -25,28 +25,20 @@ Sublime text 2在linux下的汉语输入一直是个问题，虽然网上流传�
 OK,还是让我用一个例子来看一下用LD_PRELOAD来hack别人的程序。我们写一段下面的代码。
 
 ``` c
-/* 文件名：verifypasswd.c */
-/* 这是一段判断用户口令的程序，其中使用到了标准C函数strcmp*/
-
+// verifypasswd.c
 #include <stdio.h>
 #include <string.h>
 
-int main(int argc,char **argv)
-{
+int main(int argc,char **argv) {
     char passwd[] = "password";
-
-    if (argc < 2)
-    {
+    if (argc < 2) {
         printf("usage: %s <password>\n",argv[0]);
         return;
     }
-
-    if (!strcmp(passwd,argv[1]))
-    {
+    if (!strcmp(passwd,argv[1])) {
         printf("Correct Password!\n");
         return;
     }
-
     printf("Invalid Password!\n");
 }
 ```
@@ -54,15 +46,14 @@ int main(int argc,char **argv)
 在上面这段程序中，我们使用了strcmp函数来判断两个字符串是否相等。下面，我们使用一个动态函数库来重载strcmp函数：
 
 ``` c
-/* 文件名：hack.c */
-
+// hack.c
 #include <stdio.h>
 #include <string.h>
 
 int strcmp(const char *s1, const char *s2)
 {
     printf("hack function invoked. s1= s2=/n", s1, s2);
-    /* 永远返回0，表示两个字符串相等 */
+    // always return 0, which means s1 equals to s2.
     return 0;
 }
 ```

@@ -39,7 +39,7 @@ run Rack::NotFound.new('_site/404.html')
 
 `cat Gemfile`
 
-```ini
+```text
 source "https://rubygems.org"
 
 gem "rack-contrib", "~> 1.1.0"
