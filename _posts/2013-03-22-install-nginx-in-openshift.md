@@ -4,6 +4,9 @@ title: "Install Nginx in OpenShift"
 description: "teach you how to install nginx in openshift"
 category: life
 tags: [blog, config]
+published: true
+comments: true
+date: 2013-03-22 22:39:12 +0800
 ---
 {% include JB/setup %}
 

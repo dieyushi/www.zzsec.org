@@ -4,7 +4,9 @@ title: "LD_PRELOAD的那些事"
 description: "something about LD_PRELOAD"
 category: coding
 tags: [archlinux]
-published: 
+published: true
+comments: true
+date: 2013-04-10 23:14:11 +0800
 ---
 {% include JB/setup %}
 

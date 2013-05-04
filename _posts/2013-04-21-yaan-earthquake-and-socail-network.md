@@ -4,7 +4,9 @@ title: "地震与社交网络"
 description: "Ya'an earthquake and social network"
 category: life
 tags: [misc]
-published: 
+published: true
+comments: true
+date: 2013-04-21 20:28:41 +0800
 ---
 {% include JB/setup %}
 

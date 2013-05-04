@@ -4,7 +4,9 @@ title: "leetcode刷题记录8"
 description: "leetcode coding record"
 category: coding
 tags: [c++, algorithm, leetcode]
-published: 
+published: true
+comments: true
+date: 2013-05-03 23:48:02 +0800
 ---
 {% include JB/setup %}
 

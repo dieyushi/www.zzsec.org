@@ -4,6 +4,9 @@ title: "google注册过程分析"
 description: "google account automatic registration"
 category: coding
 tags: [google]
+published: true
+comments: true
+date: 2013-04-05 13:16:24 +0800
 ---
 {% include JB/setup %}
 

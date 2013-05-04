@@ -3,8 +3,10 @@ layout: post
 title: "HttpOnly的那些事"
 description: "HttpOnly的来源，发展和弱点"
 category: web
-published: 
 tags: ["websecurity","xss"]
+published: true
+comments: true
+date: 2013-03-24 20:55:47 +0800
 ---
 {% include JB/setup %}
 

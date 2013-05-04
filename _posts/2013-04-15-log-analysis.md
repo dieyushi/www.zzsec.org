@@ -4,7 +4,9 @@ title: "日志处理"
 description: "web server access log analysis"
 category: web
 tags: [log, websecurity]
-published:
+published: true
+comments: true
+date: 2013-04-15 21:53:56 +0800
 ---
 {% include JB/setup %}
 

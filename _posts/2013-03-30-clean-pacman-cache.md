@@ -4,6 +4,9 @@ title: "Pacman缓存清理"
 description: "clean pacman cache"
 category: coding
 tags: [archlinux,python]
+published: true
+comments: true
+date: 2013-03-30 13:39:03 +0800
 ---
 {% include JB/setup %}
 
