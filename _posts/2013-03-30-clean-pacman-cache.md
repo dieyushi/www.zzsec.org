@@ -3,7 +3,7 @@ layout: post
 title: "Pacman缓存清理"
 description: "clean pacman cache"
 category: coding
-tags: [archlinux,python]
+tags: [archlinux, python, linux]
 published: true
 comments: true
 date: 2013-03-30 13:39:03 +0800
