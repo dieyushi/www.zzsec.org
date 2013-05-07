@@ -61,6 +61,11 @@ EOF
 
 为windows客户端提供DNS服务器
 
+编辑`/etc/ppp/chap-secrets`,设置登录用户名和密码
+
+    user1 pptpd password1 *
+    user2 pptpd password2 *
+
 编辑`/etc/sysctl.conf`,开启ipv4转发，否则连接vpn后只能访问服务器，不能访问服务器以外的资源。
 
 ```bash
