@@ -10,6 +10,11 @@ date: 2013-04-05 13:16:24 +0800
 ---
 {% include JB/setup %}
 
+### 更新
+
+#### 2013-5-23
+已实效，现在页面已经变了，大家就看个方法吧，具体的大家可以自己再分析下。
+
 ### 前言
 google账户的注册页面为[https://accounts.google.com/NewAccount](https://accounts.google.com/NewAccount),看了下google账户的注册机制，发现所有的POST变量都可以找到，只有`bgresponse`不是页面中直接可以得到的。`bgresponse`是专门验证是不是bot的。使用了google的`botguard`技术，如果不能正确的发送这个值的话，google就会要求进行手机验证。这个值的获取方法如下。
 
