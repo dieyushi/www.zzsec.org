@@ -18,5 +18,6 @@ date: 2013-05-28 17:10:32 +0800
 
 - 使用apache + mod_wsgi部署时，报错说是找不到模板，使用了绝对路径才ok，可以使用`__FILE__`来做。
 - web.py的模板系统的定义变量语句`$def with(name1, name2)`要放到页面起始位置。
-- 使用了jquery的话，$会引起冲突，需要转义为`$$`
-- 可以使用`$:render.header()`和`$:render.foot()`来实现类似PHP include引用模板
+- 使用了jquery的话，$会引起冲突，需要转义为`$$`。
+- 可以使用`$:render.header()`和`$:render.foot()`来实现类似PHP include引用模板。
+- 如果要向模板中传入很多值，可以用`locals()`来传值。`local()`返回值是字典型。
