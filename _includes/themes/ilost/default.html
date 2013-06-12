@@ -47,6 +47,18 @@
                     <li><a href="https://plus.google.com/{{ site.author.googleplus }}" target="_blank" rel="me">Google+</a></li>
                 </ul>
                 </li>
+
+
+                <li id="tagcloud-1" class="widget widget_recent_entries">
+                <h3 class="widgettitle">Categories</h3>
+                <ul >
+                    {% for category in site.categories %}
+                    <li><a href={{ site.production_url }}/categories.html#{{ category[0] }}-ref>{{ category[0] }}</a></li>
+                    {% endfor %}
+                </ul>
+                </li>
+
+ 
                 <li id="tagcloud-2" class="widget">
                 <h3 class="widgettitle">Tag Cloud</h3>
                 <div class="post-meta">
