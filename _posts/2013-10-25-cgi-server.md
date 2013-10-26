@@ -82,6 +82,28 @@ CGI的缺点是每次请求都要生成一个程序的副本来运行，不能�
     execlp(executable, executable,(char *)0);
 ```
 
+执行脚本前首先要将请求的数据当作输入写到管道中。
+
+```c
+    while ((total_read < c_length) && (!feof(socket_stream))) {
+        size_t diff = c_length - total_read;
+        if (diff > CGI_POST) {
+            /*
+             * If there's more than our buffer left,
+             * obviously, only read enough for the buffer.
+             */
+            diff = CGI_POST;
+        }
+        size_t read;
+        read = fread(buf, 1, diff, socket_stream);
+        total_read += read;
+        /*
+         * Write to the CGI pipe
+         */
+        fwrite(buf, 1, read, cgi_pipe_post);
+    }
+```
+
 接下来就是从cgi_pipe中读取信息，首先了是读取头信息。
 
 ```c
@@ -117,15 +139,9 @@ CGI的缺点是每次请求都要生成一个程序的副本来运行，不能�
         //fprintf(socket_stream, "%s", buf);
         ++j;
     }
-    if (j < 1) {
-        fprintf(stderr,"[warn] CGI script did not give us headers.\n");
-    }
-    if (feof(cgi_pipe)) {
-        fprintf(stderr,"[warn] Sadness: Pipe closed during headers.\n");
-    }
 ```
 
-然后是读取CGI的返回信息。
+遇到`\r\n`说明读到Header结束后，接着就是读取CGI的返回信息。
 
 ```c
     while (!feof(cgi_pipe)) {
@@ -147,12 +163,8 @@ CGI的缺点是每次请求都要生成一个程序的副本来运行，不能�
         }
         fwrite(buf, 1, read, socket_stream);
     }
-    if (enc_mode == 0) {
-        /*
-         * We end `chunked` encoding with a 0-length block
-         */
-        fprintf(socket_stream, "\r\n0\r\n\r\n");
-    }
 ```
 
-之后就是一些资源释放的操作了。
+将这些信息发送到了客户端之后就是一些资源释放的操作了。
+
+很简单吧，这样子就可以实现一个CGI WebServer了。
