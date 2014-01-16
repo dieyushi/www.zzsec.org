@@ -2,7 +2,7 @@
 layout: post
 title: "UNIX网络编程读书笔记"
 description: "unix network programming"
-category: code
+category: coding
 tags: [c, linux]
 published: true
 comments: true

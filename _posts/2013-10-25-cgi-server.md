@@ -2,7 +2,7 @@
 layout: post
 title: "CGI WebServer"
 description: "tell you how to write a cgi webserver"
-category: code
+category: coding
 tags: [c, server]
 published: true
 comments: true
