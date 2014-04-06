@@ -75,6 +75,63 @@ string_filter:
 	;
 ```
 
-工程中定义了语法树的结构，并且在语法树生成后，遍历整个树并通过递归计算整个表达式的值。
+从上述代码中可以看出我们将解析后的语法保存在一个树的结构中，打印整个表达式只需要遍历整个树即可。
 
-整个工程可以参考https://github.com/dieyushi/expr_parser
+```c
+void print_expression(node_t *root)
+{
+    static const char *ops[] = {"&&", "||", "==", "^^"};
+    if (!root) return;
+    printf("%s", "(");
+    print_expression(root->left_child);
+    switch(root->type) {
+        case OP:
+            printf(" %s ", ops[root->value.op]);
+            break;
+        case LEFT:
+            printf("(%s", root->value.string_literal);
+            break;
+        case RIGHT:
+            printf("%s)", root->value.string_literal);
+            break;
+        default:
+            break;
+    }
+    print_expression(root->right_child);
+    printf("%s", ")");
+}
+```
+
+计算整个表达式的真假，只需要递归就好，很基本的树的操作。
+
+```c
+int evaluate_expression(node_t *root)
+{
+    if (!root) return 1;
+    switch (root->type) {
+        case LEFT:
+        case RIGHT:
+            return 1;
+        case OP:
+            break;
+    }
+    switch (root->value.op) {
+        case EQ:
+            return eval_eq_node(root);
+        case CT:
+            return eval_ct_node(root);
+        case AND:
+            return (evaluate_expression(root->left_child)
+                    && evaluate_expression(root->right_child));
+        case OR:
+            return (evaluate_expression(root->left_child)
+                    || evaluate_expression(root->right_child));
+    }
+    return 0;
+}
+```
+
+完整的源码在https://github.com/dieyushi/expr_parser
+
+当然该代码离libpcap支持的语法还差的很远，但是该代码稍加改动就可以用于简单的输入输出过滤，如果需要支持新的词法和语法，大家可以自己添加。
+
