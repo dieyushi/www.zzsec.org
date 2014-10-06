@@ -5,10 +5,10 @@ description: "mydogear rss subscribe and send to kindle via chrome or pc"
 category: life
 tags: [kindle]
 published: true
-comments: true
+disqus: y
 date: 2013-05-07 19:11:26 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

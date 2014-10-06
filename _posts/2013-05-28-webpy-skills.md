@@ -5,10 +5,10 @@ description: "some skills about web.py framework"
 category: web
 tags: [python, framework]
 published: true
-comments: true
+disqus: y
 date: 2013-05-28 17:10:32 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

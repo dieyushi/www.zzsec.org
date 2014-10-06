@@ -5,10 +5,10 @@ description: "unix network programming"
 category: coding
 tags: [c, linux]
 published: true
-comments: true
+disqus: y
 date: 2014-01-16 12:07:26 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 
@@ -20,7 +20,7 @@ date: 2014-01-16 12:07:26 +0800
 
 <!--more-->
 
-![TCP]({{ site.static_url }}/2014-01-16-01.png)
+![TCP](/resources/2014-01-16-01.png)
 
 ### Bind & Listen
 

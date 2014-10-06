@@ -5,10 +5,10 @@ description: "web server access log analysis"
 category: web
 tags: [log, websecurity]
 published: true
-comments: true
+disqus: y
 date: 2013-04-15 21:53:56 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

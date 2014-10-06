@@ -5,10 +5,10 @@ description: ""
 category: web
 tags: [php, websecurity]
 published: true
-comments: true
+disqus: y
 date: 2013-05-19 22:40:59 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

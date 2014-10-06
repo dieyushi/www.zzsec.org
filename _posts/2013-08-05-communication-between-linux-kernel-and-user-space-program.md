@@ -5,10 +5,10 @@ description: "communication between linux kernel and user space program"
 category: coding
 tags: [linux, kernel]
 published: true
-comments: true
+disqus: y
 date: 2013-08-05 20:33:53 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

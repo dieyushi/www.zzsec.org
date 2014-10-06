@@ -5,10 +5,10 @@ description: "google account automatic registration"
 category: coding
 tags: [google]
 published: true
-comments: true
+disqus: y
 date: 2013-04-05 13:16:24 +0800
 ---
-{% include JB/setup %}
+
 
 ### 更新
 

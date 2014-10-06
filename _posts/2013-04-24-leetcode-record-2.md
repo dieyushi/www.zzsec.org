@@ -5,10 +5,10 @@ description: "leetcode coding record"
 category: coding
 tags: [c++, algorithm, leetcode]
 published: true
-comments: true
+disqus: y
 date: 2013-04-24 11:35:46 +0800
 ---
-{% include JB/setup %}
+
 
 昨天晚上有别的事情，没来的记录和总结，今天上午补上，大概做了六七个小时吧，解决了7道题，难度都是中低等的题目。还是要继续提高啊。
 

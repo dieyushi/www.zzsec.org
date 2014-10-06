@@ -5,10 +5,10 @@ description: "some photos in nanjing"
 category: life
 tags: []
 published: true
-comments: true
+disqus: y
 date: 2013-06-09 01:13:05 +0800
 ---
-{% include JB/setup %}
+
 
 ![](http://distilleryimage10.ak.instagram.com/2935f6c0d06211e2a84322000aa80627_7.jpg)
 

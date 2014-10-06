@@ -5,10 +5,10 @@ description: "some ideas about this blog"
 category: life
 tags: [jekyll, golang, blog]
 published: true
-comments: true
+disqus: y
 date: 2013-04-18 17:17:34 +0800
 ---
-{% include JB/setup %}
+
 
 ### 现状
 

@@ -5,10 +5,10 @@ description: "leetcode coding record"
 category: coding
 tags: [c++, algorithm, leetcode]
 published: true
-comments: true
+disqus: y
 date: 2013-05-03 23:48:02 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

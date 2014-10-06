@@ -5,10 +5,10 @@ description: "php code injection"
 category: web
 tags: [websecurity]
 published: true
-comments: true
+disqus: y
 date: 2013-05-13 18:05:37 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

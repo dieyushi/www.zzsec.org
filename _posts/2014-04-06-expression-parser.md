@@ -5,10 +5,10 @@ description: "expression parser"
 category: coding
 tags: [c, flex, bison]
 published: true
-comments: true
+disqus: y
 date: 2014-04-06 22:00:44 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

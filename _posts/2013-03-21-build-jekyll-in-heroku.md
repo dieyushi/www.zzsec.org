@@ -5,10 +5,10 @@ description: "build jekyll in heroku"
 category: life
 tags: [blog, config]
 published: true
-comments: true
+disqus: y
 date: 2013-03-21 13:08:32 +0800
 ---
-{% include JB/setup %}
+
 
 ### 说明
 

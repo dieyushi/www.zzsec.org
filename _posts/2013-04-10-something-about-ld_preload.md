@@ -5,10 +5,10 @@ description: "something about LD_PRELOAD"
 category: coding
 tags: [archlinux, linux]
 published: true
-comments: true
+disqus: y
 date: 2013-04-10 23:14:11 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

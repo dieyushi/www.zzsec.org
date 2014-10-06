@@ -5,10 +5,10 @@ description: "clean pacman cache"
 category: coding
 tags: [archlinux, python, linux]
 published: true
-comments: true
+disqus: y
 date: 2013-03-30 13:39:03 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 有一段时间没有清理pacman的缓存了，今天`du -hs`了一下子发现缓存居然有5G之多，所以决定写一个小程序来清理多余的包，每个包只保留当前的最新版本。其实很早之前就想写这么一个小程序了，今天才动手花了半个小时把它实现了。

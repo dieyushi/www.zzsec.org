@@ -5,10 +5,10 @@ description: "tell you how to write a cgi webserver"
 category: coding
 tags: [c, server]
 published: true
-comments: true
+disqus: y
 date: 2013-10-25 19:52:41 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

@@ -5,10 +5,10 @@ description: "leetcode statistics"
 category: coding
 tags: [leetcode]
 published: true
-comments: true
+disqus: y
 date: 2013-04-26 19:12:34 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

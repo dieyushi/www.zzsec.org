@@ -5,10 +5,10 @@ description: "teach you how to install nginx in openshift"
 category: life
 tags: [blog, config]
 published: true
-comments: true
+disqus: y
 date: 2013-03-22 22:39:12 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 这几天将博客搬移到了`OpenShift`上，使用它的`DIY app`，搭建了一个`Nginx`环境用来跑我的静态博客。`OpenShift`使用的是`Amazon`的主机，国内访问有点慢，通过`CloudFlare`来做`CDN`感觉效果不是很明显，但是考虑到博客主要是自己访问，通过代理速度还可以接受，毕竟`CloudFlare`能够使网站在全美国的`ping`在10ms左右。

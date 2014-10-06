@@ -5,10 +5,10 @@ description: "XSS detection in chrome extension"
 category: web
 tags: [xss]
 published: true
-comments: true
+disqus: y
 date: 2013-06-22 11:04:11 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

@@ -5,10 +5,10 @@ description: "something recently"
 category: life
 tags: [work]
 published: true
-comments: true
+disqus: y
 date: 2013-08-03 21:38:46 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

@@ -5,10 +5,10 @@ description: "Ya'an earthquake and social network"
 category: life
 tags: [misc]
 published: true
-comments: true
+disqus: y
 date: 2013-04-21 20:28:41 +0800
 ---
-{% include JB/setup %}
+
 
 ### 关于地震
 

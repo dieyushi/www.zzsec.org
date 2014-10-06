@@ -5,10 +5,10 @@ description: "some gdb trips and tricks"
 category: coding
 tags: [gdb]
 published: true
-comments: true
+disqus: y
 date: 2014-09-21 17:48:53 +0800
 ---
-{% include JB/setup %}
+
 
 最近一段时间遇到了几个定位了很长时间的bug，在定位过程中逐步学习了使用gdb，下面就是在调试中常用的一些调试方法。
 

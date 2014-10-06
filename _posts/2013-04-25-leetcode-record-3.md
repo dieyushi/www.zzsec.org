@@ -5,10 +5,10 @@ description: "leetcode coding record"
 category: coding
 tags: [c++, algorithm, leetcode]
 published: true
-comments: true
+disqus: y
 date: 2013-04-25 23:14:48 +0800
 ---
-{% include JB/setup %}
+
 
 昨天到今天一直没静下心来好好想想算法，导致这两天就做了一道题，太惭愧了。不过题目难度为5,想了好久的算法啊。
 

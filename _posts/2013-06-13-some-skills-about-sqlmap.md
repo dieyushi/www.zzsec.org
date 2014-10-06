@@ -5,10 +5,10 @@ description: "some skills about sqlmap"
 category: web
 tags: [sqli, websecurity]
 published: true
-comments: true
+disqus: y
 date: 2013-06-13 22:28:58 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 

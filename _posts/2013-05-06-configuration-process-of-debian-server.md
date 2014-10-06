@@ -5,10 +5,10 @@ description: "configuration process of Debian server"
 category: life
 tags: [debian, linux]
 published: true
-comments: true
+disqus: y
 date: 2013-05-06 01:29:20 +0800
 ---
-{% include JB/setup %}
+
 
 ### 前言
 
