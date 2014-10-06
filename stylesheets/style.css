@@ -360,3 +360,10 @@ img {
   margin-left: -340px; }
 .paging .right {
   margin-left: 320px; }
+
+table{border-collapse:collapse;border-spacing:0;}
+table th,table td{word-wrap:break-word;overflow:hidden;}
+table{border:1px solid #e7e7e7;border-collapse:collapse;margin:0 0 1.6em;text-align:left;width:100%;}
+th{border-top:1px solid #e7e7e7;padding:4px 8px;color:#666;font-size:12px;font-weight:bold;letter-spacing:0.1em;line-height:1.6em;text-transform:uppercase;}
+td{border-top:1px solid #e7e7e7;padding:4px 8px;font-size:14px;display:table-cell;vertical-align:inherit;}
+tr:nth-child(even) {background:#f2f7fc;}
