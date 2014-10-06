@@ -11,12 +11,9 @@ links:
   - name:         Blog
     url:          http://www.zzsec.org
     external:     true
-  - name:         Email
-    url:          mailto:zz@zzsec.org
-    external:     true
-  - name:         GitHub
-    url:          http://github.com/dieyushi
-    external:     true
+  - name:         Feed
+    url:          /atom.xml
+
 highlighter:      pygments
 permalink:        /:year/:month/:title
 exclude:
