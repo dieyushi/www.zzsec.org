@@ -10,7 +10,7 @@ title : Sitemap
 	http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 	<url>
-		<loc>{{ site.production_url  }}</loc>
+		<loc>{{ site.url  }}</loc>
 		<lastmod>{{ site.time | date_to_xmlschema  }}</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
@@ -18,7 +18,7 @@ title : Sitemap
 
 	{% for page in site.pages %}
 	<url>
-		<loc>{{ site.production_url  }}{{ page.url  }}</loc>
+		<loc>{{ site.url  }}{{ page.url  }}</loc>
 		<lastmod>{{ site.time | date_to_xmlschema  }}</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>0.8</priority>
@@ -27,7 +27,7 @@ title : Sitemap
 
 	{% for post in site.posts %}
 	<url>
-		<loc>{{ site.production_url  }}{{ post.url  }}</loc>
+		<loc>{{ site.url  }}{{ post.url  }}</loc>
 		{% if post.date %}
 		<lastmod>{{ post.date | date_to_xmlschema  }}</lastmod>
 		{% endif %}

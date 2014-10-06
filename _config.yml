@@ -1,6 +1,6 @@
 title:            Focus on Coding
 description:      A blog focus on coding written by zz.
-url:              www.zzsec.org # Site url.
+url:              http://www.zzsec.org # Site url.
 signoff:          zz # Your name.
 disqus_shortname:   zzsec # disqus comment thread for post header options. ( leave blank if unwanted. )
 google_analytics:   UA-39425016-1 # set tracking, remove from /javascripts/basic.js if unwanted.
