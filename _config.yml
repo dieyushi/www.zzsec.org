@@ -10,7 +10,6 @@ links:
     url:          /about.html
   - name:         Blog
     url:          http://www.zzsec.org
-    external:     true
   - name:         Feed
     url:          /atom.xml
 
