@@ -7,7 +7,7 @@ google_analytics:   UA-39425016-1 # set tracking, remove from /javascripts/basic
 
 links:
   - name:         About
-    url:          /about
+    url:          /about.html
   - name:         Blog
     url:          http://www.zzsec.org
     external:     true
