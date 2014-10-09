@@ -13,25 +13,6 @@ CONFIG = {
 	'theme_package_version' => "0.1.0"
 }
 
-
-desc "compile and run the site"
-task :default do
-  pids = [
-    spawn("bundle exec jekyll server -w"),
-    spawn("scss --watch _assets:stylesheets"),
-    spawn("coffee -b -w -o javascripts -c _assets/*.coffee")
-  ]
- 
-  trap "INT" do
-    Process.kill "INT", *pids
-    exit 1
-  end
- 
-  loop do
-    sleep 1
-  end
-end
-
 # Usage: rake post title="A Title" [date="2012-02-09"] [tags=[tag1, tag2]]
 desc "Begin a new post in #{CONFIG['posts']}"
 task :post do
