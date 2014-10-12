@@ -14,7 +14,7 @@ links:
     url:          /atom.xml
 
 highlighter:      pygments
-permalink:        /:year/:month/:title
+permalink:        /:year/:month/:title/
 exclude:
     - Rakefile
 markdown:         redcarpet
