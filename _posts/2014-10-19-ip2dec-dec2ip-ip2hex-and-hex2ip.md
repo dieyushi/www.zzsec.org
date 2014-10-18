@@ -65,6 +65,7 @@ dec2ip "$@"
 ```
 
 测试
+
 ```sh
 # ip2hex 1.2.3.4| xargs hex2ip | xargs ip2dec | xargs dec2ip
 100.101.102.103
