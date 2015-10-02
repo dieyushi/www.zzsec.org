@@ -20,7 +20,7 @@ date: 2014-01-16 12:07:26 +0800
 
 <!--more-->
 
-![TCP]({{ site.static_url }}/2014-01-16-01.png)
+![TCP]({{ site.static_url }}/pic/2014-01-16-01.png)
 
 ### Bind & Listen
 
