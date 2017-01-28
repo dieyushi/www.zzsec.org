@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/zzscu
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.zzsec.org
+  * I am zzscu (https://keybase.io/zzscu) on keybase.
+  * I have a public key with fingerprint 745C 9E1B 0A79 C8EF 5C2D  CADA 341D 4D6F 9E09 DEA5
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01202c52398dc42f2267ae86fe2453a21c512c74f8e06bef2bf5e965bd2f62c8914f0a",
+            "fingerprint": "745c9e1b0a79c8ef5c2dcada341d4d6f9e09dea5",
+            "host": "keybase.io",
+            "key_id": "341d4d6f9e09dea5",
+            "kid": "010131c521ed6aafdca5dfdcc8e4182d2cbb81756fd8e4a1ec5b9ff4f337bd95f9e60a",
+            "uid": "ecb91f40a20462e7b77d3282304dd919",
+            "username": "zzscu"
+        },
+        "service": {
+            "hostname": "www.zzsec.org",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1485596018,
+    "expire_in": 157680000,
+    "prev": "d0d0b8a78f2d1a7c5887370b2f04cc5eb5f358da7b06b1c5dfc286dff472a0f3",
+    "seqno": 11,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.62
+Comment: https://keybase.io/crypto
+
+yMNwAnicbZJ9TFVlHMcvJDquUVxNtCakhwax4O6c57xjqGwmNFFbI0UC6ZzzPOdy
+B9xzOfdcXoMR4BbpAKUQmuILpI5CIv2jGhUgMBCHBCMmL3cWTJswKkuTgOy5TP/r
+/PGcPb/n+/083+f3PN0Bz5jMPkzwXq3B3/OZz0BnrduUdAzphYSswXwiupDIQCs/
+lAmRy0jLsEMimiApQAKFBbQoQIUBKgAcLyGBUxFgWFoClMJSQOEZVUAkJyMVyCqL
+RI6VIVA5oAgixaikREQSqt1hQ7pTtzsMjOUZVhERJZMSLyoCUlkFQEWCEs1QkIGc
+KiJShEhisTFdc3kdOJwsuZDVruEanqStxPsf/dPcJEXjcIBCkJMkFdNZiEe8GUMJ
+AAJFlgWKZzkV4opEIYWVRVVlVJrmZSiymMit5Hav4JAii5TKkBIgGQ4gXuZ5SAMB
+0CQDoUiJXqEL6Q4pC2F1QYFLcRNFkQQu5dgV5O2q9xhPlnNzc61YghSrptuw06lr
+hqZomXgp3TCcrmiv1ch3rmiRnPaEkibbHRB3ETtykO6yaw4imsJKxbB7sRQjsKzI
+kZQQSaA8p11HaXavguU5gcSfdx+Ug5GQhKQsSLygAkhJvMIKAk/zpAxUklEUFsms
+SrMClHgZ3yhuIVQVIHAQN4cHEqnShPdc2Q4NsymcU7Jhpstuc0iGW0dEUVdnyiqT
+j9m02s/X+7xMZv/Ap4+u+fbzj5MtzfElE57L21/Nmp2IWdoZe3ipL3zU+ZWvIzdj
+7kHZUH3y8Xjz6aCksLaQXWHv9yS6wncdvluVkznkBz4qGw+5sznqc6N6fvvJhcat
+dIkNqIlBxa8cOGOET2dPlx7ccP2PxHXm4sCp5rs72IfuUJ+ujN/Qc7Fwvqhun29t
+R6sjfcC0jrCcur3+VjVhcbwesOrUtpDUvv09jbOR+/PO1Y3tq8u+4rc689FJ8p52
+cAiW9DSfrSg8PneodKA3etIVdi5n6cKDsaRPqU+aZqL0HUNO9z/LJ240lH1wM6b0
+59CqS3kvd1V+OPrGL50NScP369rael5s9k3ljereR1fXhOvDCbUT/RNT1oT1gxHt
+7QeK9tR0jA/8mRLU9s1wjMUXXZ0Pyms5Wj5lPTF/eiTwVuVE97UajxgwM7m2IG6M
+j7s527jXmPFsaVrUqmLoa+8tRKmDjRnmdv978WUt9SmFw3L/oCc/94XFireXi+e0
+s6Op7x6b+nH6cc07f/f1XajUvyweqQ0OufHmne7F+p8SQh9u+lgL39zf2hS2azpO
+K78+uJHPPv/dclE+9e9k75Y1Fwe/vmJYF7KWtplHmvx/77IEbqU2Kof+Co5YHD0y
+2fvSnlb9C6Jld++lZzfcT/Qkm0PaClDE0XH18uj3R+Itmzp+LdeGd4a+dr4UxpyZ
+k3x6fnBd/HZtxVuxtv8AoB3KhA==
+=JwPQ
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/zzscu
+
+==================================================================
